@@ -65,7 +65,8 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-    return Math.floor(Math.random() * 3)
+  let score = Math.floor(Math.random() * 3)
+    return score;
 }
 
 console.log('task 1 - ', inning());
@@ -84,6 +85,14 @@ Use the finalScore function below to do the following:
 }
 */ 
 
+function getArraySum(a){
+  var total=0;
+  for(var i in a) { 
+      total += a[i];
+  }
+  return total;
+}
+
 function finalScore(inningcb, number){
   let x = [];
   let y = [];
@@ -94,13 +103,6 @@ function finalScore(inningcb, number){
   for(let i = 0; i < number; i++) {
     x.push(inningcb),
     y.push(inningcb);
-  }
-  function getArraySum(a){
-    var total=0;
-    for(var i in a) { 
-        total += a[i];
-    }
-    return total;
   }
   return teamScore;
 }
@@ -167,13 +169,29 @@ Use the scoreboard function below to do the following:
 
 function scoreboard(getInningScorecb, inningcb, num) {
   let scores = [];
-    for(let i = 0; i <= num; i++) {
-      scores.push(`Inning ${i}: Away ${inningcb} - Home ${inningcb}`);
-    }
-    If ()
+  let home = [];
+  let away = [];
+  function inningx(){
+    let score = Math.floor(Math.random() * 3)
+      return score;
+  }
+  for (let i = 0; i <= num; i++) {
+    let score = inningx();
+    home.push(score);
+    away.push(score);
+  }
+  for(let i = 0; i <= num; i++) {
+    scores.push(`Inning ${i}: Away ${away[i]} - Home ${home[i]}`);
+  }
+  if(getArraySum(home) === getArraySum(away)) {
+    scores.push(`This game will require extra innings: Away ${getArraySum(away)} - Home ${getArraySum(home)}`)
+  } else {
+    scores.push(`Final Score: Away ${getArraySum(away)} - Home ${getArraySum(home)}`)
+  }
+  return scores;
 }
 
-
+console.log(scoreboard(getInningScore, inning, 6))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
