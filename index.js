@@ -113,8 +113,8 @@ Use the getInningScore() function below to do the following:
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
 function getInningScore(inningcb) {
-  let x = inningcb;
-  let y = inningcb;
+  let x = Math.floor(Math.random() * 3);
+  let y = Math.floor(Math.random() * 3);
   let inningScore = {
     Home: x,
     Away: y
@@ -165,8 +165,12 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScorecb, inningcb, num) {
+  let scores = [];
+    for(let i = 0; i <= num; i++) {
+      scores.push(`Inning ${i}: Away ${inningcb} - Home ${inningcb}`);
+    }
+    If ()
 }
 
 
